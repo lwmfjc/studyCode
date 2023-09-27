@@ -1,0 +1,10 @@
+#!/bin/bash
+# Program to output a system information page
+hello(){
+ echo "h1ello world"
+ return 123
+}
+lyvar=$(hello)
+echo $lyvar
+exit 123
+

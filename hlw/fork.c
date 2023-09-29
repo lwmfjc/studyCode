@@ -1,4 +1,4 @@
-#include <unistd.c>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <err.h>
@@ -14,5 +14,16 @@ static void parent(pid_t pid_c)
 }
 int main(void)
 {
-	
+	pid_t ret;//pid_t:process hello
+	ret = fork();//start new 
+	if(ret == -1)
+		err(EXIT_FAILURE,"fork() failed");
+	if(ret == 0){
+		sleep(1000);
+		child();
+	}else {
+		parent(ret);
+	}
+	err(EXIT_FAILURE,"shouldn't reach here");
+
 }

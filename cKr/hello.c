@@ -1,5 +1,10 @@
 #include <stdio.h>
-main()
+#include "h.h"
+int main()
 {
-	printf("hello,world\n");
+    h1();
+	h2();
+	printf("hello,world\n"
+		   "a" "b" "1"
+		   "3");
 }
